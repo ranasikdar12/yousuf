@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -12,6 +13,11 @@ def read_json(file):
 def write_json(file, data):
     with open(file, "w") as f:
         json.dump(data, f, indent=4)
+
+
+# --------------------------
+# API ROUTES
+# --------------------------
 
 @app.get("/products")
 def products():
@@ -34,4 +40,10 @@ def add_product():
     write_json("data/products.json", data)
     return jsonify({"message": "Product added"})
 
-app.run(debug=True)
+
+# --------------------------
+# FIX FOR RENDER HOST + PORT
+# --------------------------
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))   # Render gives PORT env var
+    app.run(host="0.0.0.0", port=port, debug=True)
