@@ -45,9 +45,12 @@ def add_product():
     return jsonify({"message": "Product added"})
 
 
+# ... (all your routes)
+
 # --------------------------
-# FIX FOR RENDER HOST + PORT
+# REMOVE THIS SECTION FOR RENDER/GUNICORN DEPLOYMENT
 # --------------------------
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+# if __name__ == "__main__":
+#     port = int(os.environ.get("PORT", 5000))
+#     app.run(host="0.0.0.0", port=port)
+
