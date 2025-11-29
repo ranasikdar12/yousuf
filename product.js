@@ -1,4 +1,5 @@
-const API = "http://127.0.0.1:5000";
+const API_URL = "https://yousuf-yf0y.onrender.com";
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
@@ -21,3 +22,4 @@ function addToCart(id) {
     localStorage.setItem("cart", JSON.stringify(cart));
     alert("Added to cart");
 }
+
