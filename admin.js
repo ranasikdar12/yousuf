@@ -1,4 +1,5 @@
-const API = "http://127.0.0.1:5000";
+const API_URL = "https://yousuf-yf0y.onrender.com";
+
 
 async function addProduct() {
   let name = document.getElementById("pname").value;
@@ -12,3 +13,4 @@ async function addProduct() {
 
   alert("Product added!");
 }
+
