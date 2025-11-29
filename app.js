@@ -1,4 +1,5 @@
-const API = "http://127.0.0.1:5000";
+const API_URL = "https://yousuf-yf0y.onrender.com";
+
 
 async function loadProducts() {
     let res = await fetch(`${API}/products`);
@@ -20,3 +21,4 @@ async function loadProducts() {
 if (document.getElementById("product-list")) {
     loadProducts();
 }
+
